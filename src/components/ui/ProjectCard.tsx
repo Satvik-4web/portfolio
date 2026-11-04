@@ -55,7 +55,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     <div
       ref={containerRef}
       id={`project-${project.slug}`}
-      className="sticky h-auto min-h-[85vh] flex items-center justify-center my-6"
+      className="relative md:sticky h-auto min-h-0 md:min-h-[85vh] flex items-center justify-center my-6 sm:my-8"
       style={{
         top: `calc(4.5rem + ${index * 24}px)`,
       }}
