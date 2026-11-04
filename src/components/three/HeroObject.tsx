@@ -14,7 +14,7 @@ export const HeroObject: React.FC<HeroObjectProps> = ({ config }) => {
   useEffect(() => {
     // Check if user has dropped an explicit portrait.png cutout
     const img = new Image();
-    img.src = '/portrait.png';
+    img.src = `${import.meta.env.BASE_URL}portrait.png`;
     img.onload = () => setHasPortraitPng(true);
     img.onerror = () => setHasPortraitPng(false);
   }, []);
@@ -22,7 +22,7 @@ export const HeroObject: React.FC<HeroObjectProps> = ({ config }) => {
   if (hasPortraitPng === true) {
     return (
       <img
-        src="/portrait.png"
+        src={`${import.meta.env.BASE_URL}portrait.png`}
         alt="Satvik - Full-Stack Developer & CTO"
         className="w-full h-full object-contain object-bottom pointer-events-none select-none drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
         loading="eager"

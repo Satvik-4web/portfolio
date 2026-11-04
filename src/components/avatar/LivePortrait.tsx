@@ -162,7 +162,8 @@ export const LivePortrait: React.FC<LivePortraitProps> = ({
   const blinkStateRef = useRef({ isBlinking: false, startTime: 0, duration: 0.18, value: 0 });
 
   // Load portrait texture (Satvik's 3D avatar)
-  const texture = useLoader(THREE.TextureLoader, '/portrait.png');
+  const portraitUrl = `${import.meta.env.BASE_URL}portrait.png`;
+  const texture = useLoader(THREE.TextureLoader, portraitUrl);
   useMemo(() => {
     if (texture) {
       texture.generateMipmaps = true;
@@ -176,7 +177,7 @@ export const LivePortrait: React.FC<LivePortraitProps> = ({
   useEffect(() => {
     const loader = new THREE.TextureLoader();
     loader.load(
-      '/portrait-depth.png',
+      `${import.meta.env.BASE_URL}portrait-depth.png`,
       (tex) => {
         tex.minFilter = THREE.LinearFilter;
         tex.magFilter = THREE.LinearFilter;

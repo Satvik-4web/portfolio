@@ -41,7 +41,7 @@ const GLBHead: React.FC<{
   isTouch: boolean;
   reducedMotion: boolean;
 }> = ({ cursor, isTouch, reducedMotion }) => {
-  const { scene } = useGLTF('/face.glb');
+  const { scene } = useGLTF(`${import.meta.env.BASE_URL}face.glb`);
   const groupRef = useRef<THREE.Group>(null);
 
   useFrame((_, delta) => {
@@ -87,7 +87,7 @@ export const AvatarCanvas: React.FC<AvatarCanvasProps> = ({ config, className = 
     setUseToon(params.get('toon') === '1');
 
     // Verify if face.glb exists and is an actual binary model, not HTML SPA fallback
-    fetch('/face.glb', { method: 'HEAD' })
+    fetch(`${import.meta.env.BASE_URL}face.glb`, { method: 'HEAD' })
       .then((res) => {
         const ct = res.headers.get('content-type') || '';
         if (res.ok && !ct.includes('text/html')) {
