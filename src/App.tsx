@@ -4,7 +4,9 @@ import { HeroSection } from './sections/HeroSection';
 import { MarqueeSection } from './sections/MarqueeSection';
 import { AboutSection } from './sections/AboutSection';
 import { ServicesSection } from './sections/ServicesSection';
+import { ExperienceSection } from './sections/ExperienceSection';
 import { ProjectsSection } from './sections/ProjectsSection';
+import { TechStackSection } from './sections/TechStackSection';
 import { FooterSection } from './sections/FooterSection';
 
 export default function App() {
@@ -44,13 +46,19 @@ export default function App() {
       {/* 3. About Section */}
       <AboutSection />
 
-      {/* 4. Services Section */}
+      {/* 4. What I Build (Services Section) */}
       <ServicesSection />
 
-      {/* 5. Projects Section */}
+      {/* 5. Experience / Chronology Section */}
+      <ExperienceSection />
+
+      {/* 6. Projects Section (Featured + Additional + GitHub) */}
       <ProjectsSection />
 
-      {/* 6. Footer Section */}
+      {/* 7. Tech Stack Section */}
+      <TechStackSection />
+
+      {/* 8. Footer & Contact Section */}
       <FooterSection />
     </div>
   );
